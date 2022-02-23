@@ -647,6 +647,6 @@ impl Triangle2D {
     /// Calculates the distance between the center of this triangle and the point (x, y).
     pub fn distance_to_center(&self, x: f64, y: f64) -> f64 {
         let centroid = self.centroid();
-        ((x - centroid.0)*(x - centroid.0) + (y - centroid.1)*(y - centroid.1)).sqrt()
+        (x - centroid.0).hypot(y - centroid.1)
     }
 }
